@@ -1,13 +1,29 @@
-# Byte-compiled / optimized / DLL files
+# ===============================
+# Python Bytecode / Cache
+# ===============================
 __pycache__/
 *.py[cod]
+*$py.class
 
-# C extensions
+# ===============================
+# C Extensions
+# ===============================
 *.so
 
-# Distribution / packaging
-.Python
+# ===============================
+# Virtual Environments
+# ===============================
+venv/
+.venv/
 env/
+ENV/
+virtualenv/
+pip-wheel-metadata/
+
+# ===============================
+# Distribution / Packaging
+# ===============================
+.Python
 build/
 develop-eggs/
 dist/
@@ -23,17 +39,22 @@ var/
 .installed.cfg
 *.egg
 
+# ===============================
 # PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+# ===============================
 *.manifest
 *.spec
 
-# Installer logs
+# ===============================
+# Logs & Temporary Files
+# ===============================
+*.log
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+# ===============================
+# Unit Test / Coverage
+# ===============================
 htmlcov/
 .tox/
 .coverage
@@ -42,51 +63,86 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
+.pytest_cache/
 
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# DotEnv configuration
-.env
-
-# Database
-*.db
-*.rdb
-
-# Pycharm
-.idea
-
-# VS Code
-.vscode/
-
-# Spyder
-.spyproject/
-
-# Jupyter NB Checkpoints
+# ===============================
+# Jupyter
+# ===============================
 .ipynb_checkpoints/
 
-# exclude data from source control by default
-/data/
-
-# Mac OS-specific storage files
-.DS_Store
-
-# vim
+# ===============================
+# IDEs & Editors
+# ===============================
+.idea/
+.vscode/
+.spyproject/
 *.swp
 *.swo
 
-# Mypy cache
+# ===============================
+# Environment Variables
+# ===============================
+.env
+.env.*
+
+# ===============================
+# Databases
+# ===============================
+*.db
+*.sqlite3
+*.rdb
+
+# ===============================
+# OS Files
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Mypy
+# ===============================
 .mypy_cache/
-/lgbm_model.pkl
-/tfidf_vectorizer.pkl
-/experiment_info.json
+
+# ===============================
+# ML / Model Artifacts
+# ===============================
+*.pkl
+*.joblib
+*.h5
+*.onnx
+*.pt
+*.pth
+
+lgbm_model.pkl
+tfidf_vectorizer.pkl
+experiment_info.json
+
+# ===============================
+# Data (handled by DVC)
+# ===============================
+data/
+data/**
+!data/.gitkeep
+
+# ===============================
+# DVC
+# ===============================
+.dvc/cache/
+.dvc/tmp/
+
+# ===============================
+# MLflow
+# ===============================
+mlruns/
+mlartifacts/
+
+# ===============================
+# Flask / FastAPI
+# ===============================
+instance/
+*.log
+
+# ===============================
+# Docker
+# ===============================
+*.tar
