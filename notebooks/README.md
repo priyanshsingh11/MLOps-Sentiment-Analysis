@@ -10,7 +10,7 @@
 
 Run the following command on EC2 machine
 ```bash
-sudo apt update
+sudo apt-get update
 
 sudo apt install python3-pip
 
@@ -24,7 +24,11 @@ cd mlflow
 
 pipenv install mlflow
 
-pipenv install awscli
+sudo apt install unzip
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
 
 pipenv install boto3
 
@@ -43,4 +47,3 @@ mlflow server -h 0.0.0.0 --default-artifact-root s3://mlflow-tracking-buc25 --al
 
 #set uri in your local terminal and in your code 
 export MLFLOW_TRACKING_URI=http://ec2-54-147-36-34.compute-1.amazonaws.com:5000/
-```
